@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "version": "1.0.0",
+    "name": "Ticketmaster Form Filler",
+    "description": "Extention to fill out Ticketmaster forms with one single click",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "permissions":[
+    ],
+    "host_permissions": [
+        "https://www.ticketmaster.com.br/"
+    ]
+}
