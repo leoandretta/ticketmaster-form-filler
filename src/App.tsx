@@ -1,15 +1,17 @@
 import { createTheme, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
+import { FormFiller } from './components/form-filler/form-filler';
 
 
 function App() {
   
   const theme = createTheme({
+    fontFamily: "monospace",
   })
 
   return (
     <MantineProvider theme={theme}>
-        Hello World
+        <FormFiller />
     </MantineProvider>
   )
 }

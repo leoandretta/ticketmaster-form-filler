@@ -1,0 +1,9 @@
+.wrapper
+{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin: 40px 20px;
+}
