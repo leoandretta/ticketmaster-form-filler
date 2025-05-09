@@ -21,6 +21,19 @@ const FormFiller = () => {
                 const holderEl = Array.from(holderForms.children).find(el => el.querySelector(`.holder-active`))
                 if(!holderEl) return alert("Formulário não está ativo!");
                 
+                const holderType = holderEl.querySelector(`.holder-options`);
+                if(!holderType) return alert("Opções de meia não disponíveis!");
+
+                const studentDiv = Array.from(holderType.children).find(el => el.getAttribute("data-type") == "Student");
+                if(!studentDiv) return alert("Opção de meia de estudante não disponível");
+                
+                const studentOption = studentDiv.children[0]
+                if(!studentOption) return alert("Opção de meia de estudante inválida.");
+                
+                studentOption.dispatchEvent(new Event('click', { bubbles: true }))
+
+                await new Promise((res) => setTimeout(res, 50));
+            
                 const simulateTyping = async (input: HTMLInputElement, value: string) => {
                     input.focus();
                     input.value = ''
@@ -71,19 +84,26 @@ const FormFiller = () => {
                 for await (const key of keys)
                 {
                     const value = data[key as keyof FormStudentHolderValues]
-                    const input = holderEl.querySelector(`input[name="${key}"]`) as HTMLInputElement | null; 
+                    const input = holderEl.querySelector(`[name="${key}"]`) as HTMLInputElement | null; 
                     if(input) {
                         if (input.getAttribute('im-insert') === 'true') {
                             await simulateTyping(input, value.toString());
-                        } else if(input.type !== 'checkbox'){
+                        } else if(input.type == 'text'){
                             input.value = value.toString();
                             input.dispatchEvent(new Event('input', { bubbles: true }));
-                        } else {
-                            console.log("🚀 ~ func: ~ input:", input)
+                        } else if(input.type == 'checkbox'){
                             input.checked = true;
+                            input.dispatchEvent(new Event('change', { bubbles: true }));
+                        } else {
+                            input.value = value.toString();
                             input.dispatchEvent(new Event('change', { bubbles: true }));
                         }
                     }
+                }
+
+                const btnSave = holderEl.querySelector("#saveHolder");
+                if(btnSave) {
+                    btnSave.dispatchEvent(new Event('click', { bubbles: true }));
                 }
             },
         });
