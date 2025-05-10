@@ -144,6 +144,7 @@ const FormFiller = () => {
                         </Group>
                     ))
                 }
+                <ResetProfilesButton />
             </>
         )
             
@@ -163,7 +164,6 @@ const FormFiller = () => {
                 <ProfileCreate visible={createNew == true} onCancel={() => setCreateNew(false)} onSuccess={() => setCreateNew(false)}/>
                 <ProfilesHandle visible={createNew == false} />
             </Paper>
-            <ResetProfilesButton />
         </Container>
     );
 }

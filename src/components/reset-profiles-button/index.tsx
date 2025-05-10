@@ -9,7 +9,7 @@ const ResetProfilesButton = () => {
     }
     
     return (
-        <Button c="cyan" variant="transparent" onClick={onClick}>
+        <Button c="cyan" variant="transparent" onClick={onClick} fullWidth mt="10">
             <Group>
                 <Icon path={mdiBackupRestore} size="20"/>
                 Resetar perfis
