@@ -10,7 +10,7 @@ class StoredList<T>
 {
     private store: StoreApi<StoreState<T>>
 
-    constructor(starting_items: T[])
+    constructor(starting_items: T[] = [])
     {
         this.store = createStore<StoreState<T>>()(
             persist(
