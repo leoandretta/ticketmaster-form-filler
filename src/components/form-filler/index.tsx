@@ -3,16 +3,14 @@ import classes from "./index.module.css"
 import Icon from "@mdi/react";
 import { mdiAccountArrowUp,  mdiDelete, mdiPlus } from "@mdi/js";
 import { useState } from "react";
-// import { useForm } from "@mantine/form";
-// import type { FormStudentHolderValues } from "./types";
 import { profiles } from "../../config/profiles";
-// import { states } from "../../config/states";
 import { useStore } from "zustand";
 import ProfileCreate from "../profile-create";
 import type { ProfileHolderFormValues } from "../profile-create/types";
 
 const FormFiller = () => {
     const [createNew, setCreateNew] = useState(false);
+
     const fillOutForm = async (profile: ProfileHolderFormValues) => {
         if(!profile) return alert("Perfil não identificado");
 
@@ -132,7 +130,6 @@ const FormFiller = () => {
                             <TextInput w="300px" readOnly value={`${p.firstName} ${p.lastName}`} />
                             <Group justify="end">
                                 <Tooltip label="Deletar Perfil" position="bottom">
-                                    {/* <ActionIcon variant="light" color="red" onClick={() => removeProfile(index)}> */}
                                     <ActionIcon variant="light" color="red" onClick={() => profiles.remove(index)}>
                                         <Icon path={mdiDelete} />
                                     </ActionIcon>
@@ -151,83 +148,6 @@ const FormFiller = () => {
             
     }
 
-    // const ProfileCreationForm = ({ visible }: { visible: boolean }) => {
-    //     const form = useForm<FormStudentHolderValues>({
-    //         initialValues: {
-    //             firstName: "",
-    //             lastName: "",
-    //             documentNumber: "",
-    //             dateOfBirth: "",
-    //             CIE: "",
-    //             validityDate: "",
-    //             institutionName: "",
-    //             city: "",
-    //             state: "",
-    //             course: "",
-    //             confirmData: false
-    //         }
-    //     })
-
-    //     const onSubmit = (values: FormStudentHolderValues) => {
-    //         profiles.add(values);
-    //         setCreateNew(false);
-    //     }
-        
-    //     if(!visible) return;
-    //     return (
-    //         <form onSubmit={form.onSubmit(onSubmit)}>
-    //             <Text fw="bold" fz="h4">Cadastro de Perfil</Text>
-    //             <Grid>
-    //                 <Grid.Col span={5}>
-    //                     <TextInput required label="Nome" key={form.key('firstName')} {...form.getInputProps('firstName')} />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={7}>
-    //                     <TextInput required label="Sobrenomes" key={form.key('lastName')} {...form.getInputProps('lastName')} />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={3}>
-    //                     <Select label="Tipo" data={['CPF']} value="CPF" />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={9}>
-    //                     <TextInput required label="CPF" key={form.key('documentNumber')} {...form.getInputProps('documentNumber')} />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={6}>
-    //                     <TextInput required label="Data de Nascimento" key={form.key('dateOfBirth')} {...form.getInputProps('dateOfBirth')} />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={6}>
-    //                     <TextInput required label="CIE" key={form.key('CIE')} {...form.getInputProps('CIE')} />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={6}>
-    //                     <TextInput required label="Data da expiração " key={form.key('validityDate')} {...form.getInputProps('validityDate')} />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={6}>
-    //                     <TextInput required label="Nome da instuição" key={form.key('institutionName')} {...form.getInputProps('institutionName')} />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={6}>
-    //                     <TextInput required label="Cidade" key={form.key('city')} {...form.getInputProps('city')} />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={6}>
-    //                     <Autocomplete required label="UF" key={form.key('state')} {...form.getInputProps('state')} data={states} />
-    //                 </Grid.Col>
-    //                 <Grid.Col span={12}>
-    //                     <TextInput required label="Curso" key={form.key('course')} {...form.getInputProps('course')} />
-    //                 </Grid.Col>
-    //             </Grid>
-
-                
-    //             <SimpleGrid mt={20} cols={2} spacing={10}>
-    //                 <Button color="red" variant="light" onClick={() => setCreateNew(false)}>
-    //                     <Icon path={mdiClose} />
-    //                     Cancelar
-    //                 </Button>
-    //                 <Button color="teal" variant="light" type="submit">
-    //                     <Icon path={mdiCheck} />
-    //                     Salvar
-    //                 </Button>
-    //             </SimpleGrid>
-    //         </form>
-    //     );
-    // }
-
     const onClickCreate = () => {
         setCreateNew(true);
     }
@@ -239,7 +159,6 @@ const FormFiller = () => {
                 Form Filler
             </Text>
             <Paper w="400px">
-                {/* <ProfileCreationForm visible={createNew == true} /> */}
                 <ProfileCreate visible={createNew == true} onCancel={() => setCreateNew(false)} onSuccess={() => setCreateNew(false)}/>
                 <ProfilesHandle visible={createNew == false} />
             </Paper>
