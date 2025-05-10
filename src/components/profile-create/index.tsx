@@ -40,7 +40,6 @@ const ProfileCreate = ({ visible, onSuccess, onCancel}: CreateProfileFormProps) 
                 profileType == "Teacher" ? <TeacherCreationForm ref={formRef} onSubmit={onSubmit} /> :
                 profileType == "Retirees" && <RetireeCreationForm ref={formRef} onSubmit={onSubmit} />
             }
-
             <SimpleGrid mt={20} cols={2} spacing={10}>
                 <Button color="red" variant="light" onClick={() => onCancel()}>
                     <Icon path={mdiClose} />

@@ -1,4 +1,4 @@
-import { Grid, TextInput, Select, Autocomplete, Text } from "@mantine/core";
+import { Grid, TextInput, Select, Autocomplete } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { states } from "../../config/states";
 import type { ProfileFormHandle, ProfileFormProps, ProfileHolderFormValues } from "./types";
@@ -31,7 +31,6 @@ const StudentCreationForm = forwardRef<ProfileFormHandle, ProfileFormProps>(({ o
 
     return (
         <form>
-            <Text fw="bold" fz="h4">Cadastro de Perfil</Text>
             <Grid>
                 <Grid.Col span={5}>
                     <TextInput required label="Nome" key={form.key('firstName')} {...form.getInputProps('firstName')} />
