@@ -1,13 +1,14 @@
-import { ActionIcon, Button, Container, Group, Paper, Text, TextInput, Tooltip } from "@mantine/core";
+import { ActionIcon, Container, Group, Paper, Text, TextInput, Tooltip } from "@mantine/core";
 import classes from "./index.module.css"
 import Icon from "@mdi/react";
-import { mdiAccountArrowUp, mdiDelete, mdiPlus } from "@mdi/js";
+import { mdiAccountArrowUp, mdiDelete } from "@mdi/js";
 import { useState } from "react";
 import { profiles } from "../../config/profiles";
 import { useStore } from "zustand";
 import ProfileCreate from "../profile-create";
 import type { ProfileHolderFormValues } from "../profile-create/types";
 import ResetProfilesButton from "../reset-profiles-button";
+import CreateProfileButton from "../create-profile-button";
 
 const FormFiller = () => {
     const [createNew, setCreateNew] = useState(false);
@@ -121,10 +122,8 @@ const FormFiller = () => {
         if(!visible) return;
         return (
             <>
-                <Button color="teal" variant="light" fullWidth onClick={onClickCreate}>
-                    <Icon path={mdiPlus} />
-                    Criar novo perfil
-                </Button>
+                <CreateProfileButton onClick={onClickCreate} />
+                <ResetProfilesButton />
                 {
                     items.map((p, index) => (
                         <Group key={`profile-${index}`} mt={20} justify="space-between">
@@ -144,7 +143,6 @@ const FormFiller = () => {
                         </Group>
                     ))
                 }
-                <ResetProfilesButton />
             </>
         )
             
