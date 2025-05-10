@@ -7,8 +7,8 @@ import { profiles } from "../../config/profiles";
 import { useStore } from "zustand";
 import ProfileCreate from "../profile-create";
 import type { ProfileHolderFormValues } from "../profile-create/types";
-import ResetProfilesButton from "../reset-profiles-button";
-import CreateProfileButton from "../create-profile-button";
+import CreateProfileButton from "../button/create-profile";
+import ResetProfilesButton from "../button/reset-profiles";
 
 const FormFiller = () => {
     const [createNew, setCreateNew] = useState(false);
