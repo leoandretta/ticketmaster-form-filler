@@ -1,12 +1,13 @@
 import { ActionIcon, Button, Container, Group, Paper, Text, TextInput, Tooltip } from "@mantine/core";
 import classes from "./index.module.css"
 import Icon from "@mdi/react";
-import { mdiAccountArrowUp,  mdiDelete, mdiPlus } from "@mdi/js";
+import { mdiAccountArrowUp, mdiDelete, mdiPlus } from "@mdi/js";
 import { useState } from "react";
 import { profiles } from "../../config/profiles";
 import { useStore } from "zustand";
 import ProfileCreate from "../profile-create";
 import type { ProfileHolderFormValues } from "../profile-create/types";
+import ResetProfilesButton from "../reset-profiles-button";
 
 const FormFiller = () => {
     const [createNew, setCreateNew] = useState(false);
@@ -162,7 +163,7 @@ const FormFiller = () => {
                 <ProfileCreate visible={createNew == true} onCancel={() => setCreateNew(false)} onSuccess={() => setCreateNew(false)}/>
                 <ProfilesHandle visible={createNew == false} />
             </Paper>
-            
+            <ResetProfilesButton />
         </Container>
     );
 }

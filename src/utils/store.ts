@@ -44,6 +44,8 @@ class StoredList<T>
 
     public remove = (index: number): void => this.store.getState().setItems(this.list().filter((_, i) => index !== i))
 
+    public clear = (): void => this.store.getState().setItems([]);
+
     public getStore = (): StoreApi<StoreState<T>> => this.store;
 }
 
