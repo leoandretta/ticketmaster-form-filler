@@ -1,4 +1,4 @@
-import { Grid, TextInput, Select, Text } from "@mantine/core";
+import { Grid, TextInput, Select } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import type { ProfileFormHandle, ProfileFormProps, ProfileHolderFormValues } from "./types";
 import { forwardRef, useImperativeHandle } from "react";
@@ -25,7 +25,6 @@ const RetireeCreationForm = forwardRef<ProfileFormHandle, ProfileFormProps>(({ o
 
     return (
         <form>
-            <Text fw="bold" fz="h4">Cadastro de Perfil</Text>
             <Grid>
                 <Grid.Col span={5}>
                     <TextInput required label="Nome" key={form.key('firstName')} {...form.getInputProps('firstName')} />
