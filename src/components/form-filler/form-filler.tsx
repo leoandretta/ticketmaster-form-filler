@@ -127,7 +127,7 @@ const FormFiller = () => {
                 {
                     items.map((p, index) => (
                         <Group key={`profile-${index}`} mt={20} justify="space-between">
-                            <TextInput w="300px" readOnly value={p.fullName} />
+                            <TextInput w="300px" readOnly value={`${p.firstName} ${p.lastName}`} />
                             <Group justify="end">
                                 <Tooltip label="Deletar Perfil" position="bottom">
                                     {/* <ActionIcon variant="light" color="red" onClick={() => removeProfile(index)}> */}
@@ -152,7 +152,6 @@ const FormFiller = () => {
     const ProfileCreationForm = ({ visible }: { visible: boolean }) => {
         const form = useForm<FormStudentHolderValues>({
             initialValues: {
-                fullName: "",
                 firstName: "",
                 lastName: "",
                 documentNumber: "",
@@ -178,37 +177,37 @@ const FormFiller = () => {
                 <Text fw="bold" fz="h4">Cadastro de Perfil</Text>
                 <Grid>
                     <Grid.Col span={5}>
-                        <TextInput required={false} label="Nome" key={form.key('firstName')} {...form.getInputProps('firstName')} />
+                        <TextInput required label="Nome" key={form.key('firstName')} {...form.getInputProps('firstName')} />
                     </Grid.Col>
                     <Grid.Col span={7}>
-                        <TextInput required={false} label="Sobrenomes" key={form.key('lastName')} {...form.getInputProps('lastName')} />
+                        <TextInput required label="Sobrenomes" key={form.key('lastName')} {...form.getInputProps('lastName')} />
                     </Grid.Col>
                     <Grid.Col span={3}>
                         <Select label="Tipo" data={['CPF']} value="CPF" />
                     </Grid.Col>
                     <Grid.Col span={9}>
-                        <TextInput required={false} label="CPF" key={form.key('documentNumber')} {...form.getInputProps('documentNumber')} />
+                        <TextInput required label="CPF" key={form.key('documentNumber')} {...form.getInputProps('documentNumber')} />
                     </Grid.Col>
                     <Grid.Col span={6}>
-                        <TextInput required={false} label="Data de Nascimento" key={form.key('dateOfBirth')} {...form.getInputProps('dateOfBirth')} />
+                        <TextInput required label="Data de Nascimento" key={form.key('dateOfBirth')} {...form.getInputProps('dateOfBirth')} />
                     </Grid.Col>
                     <Grid.Col span={6}>
-                        <TextInput required={false} label="CIE" key={form.key('CIE')} {...form.getInputProps('CIE')} />
+                        <TextInput required label="CIE" key={form.key('CIE')} {...form.getInputProps('CIE')} />
                     </Grid.Col>
                     <Grid.Col span={6}>
-                        <TextInput required={false} label="Data da expiração " key={form.key('validityDate')} {...form.getInputProps('validityDate')} />
+                        <TextInput required label="Data da expiração " key={form.key('validityDate')} {...form.getInputProps('validityDate')} />
                     </Grid.Col>
                     <Grid.Col span={6}>
-                        <TextInput required={false} label="Nome da instuição" key={form.key('institutionName')} {...form.getInputProps('institutionName')} />
+                        <TextInput required label="Nome da instuição" key={form.key('institutionName')} {...form.getInputProps('institutionName')} />
                     </Grid.Col>
                     <Grid.Col span={6}>
-                        <TextInput required={false} label="Cidade" key={form.key('city')} {...form.getInputProps('city')} />
+                        <TextInput required label="Cidade" key={form.key('city')} {...form.getInputProps('city')} />
                     </Grid.Col>
                     <Grid.Col span={6}>
-                        <Autocomplete required={false} label="UF" key={form.key('state')} {...form.getInputProps('state')} data={states} />
+                        <Autocomplete required label="UF" key={form.key('state')} {...form.getInputProps('state')} data={states} />
                     </Grid.Col>
                     <Grid.Col span={12}>
-                        <TextInput required={false} label="Curso" key={form.key('course')} {...form.getInputProps('course')} />
+                        <TextInput required label="Curso" key={form.key('course')} {...form.getInputProps('course')} />
                     </Grid.Col>
                 </Grid>
 

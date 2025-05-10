@@ -1,5 +1,4 @@
 export type FormStudentHolderValues = {
-    fullName: string;
     firstName: string;
     lastName: string;
     documentNumber: string;
