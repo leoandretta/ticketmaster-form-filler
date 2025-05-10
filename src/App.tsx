@@ -1,6 +1,6 @@
 import { createTheme, MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
-import { FormFiller } from './components/form-filler/form-filler';
+import { FormFiller } from './components/form-filler';
 
 
 function App() {
