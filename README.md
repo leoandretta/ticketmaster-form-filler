@@ -11,8 +11,8 @@ This Chrome extension is designed to streamline the ticket purchasing process on
 ⚡ **Faster Checkout:** Fills out the form fields in a split second, giving you an edge in time-sensitive ticket releases.
 
 <div style="display: flex; width: 100%; justify-content: space-between">
-  <img src="public/images/screenshot1.png" alt="Screenshot Register Profile" width="350px" height="200px" />
-<img src="public/images/screenshot2.png" alt="Screenshot Register Profile" width="300px" />
+  <img src="public/images/screenshot3.png" alt="Screenshot Register Profile" width="400px" height="250px" />
+  <img src="public/images/screenshot2.png" alt="Screenshot Register Profile" width="400px" />
 </div>
 
 
