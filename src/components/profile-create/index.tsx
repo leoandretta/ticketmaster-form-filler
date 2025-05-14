@@ -25,7 +25,7 @@ const ProfileCreate = ({ visible, onSuccess, onCancel}: CreateProfileFormProps) 
     if(!visible) return;
     return (
         <>
-            <Text fw="bold" fz="h4">Cadastro de Perfil</Text>
+            <Text fw="bold" fz="h6">Cadastro de Perfil</Text>
             <Select
             	label="Tipo de meia entrada"
                 required
@@ -40,7 +40,7 @@ const ProfileCreate = ({ visible, onSuccess, onCancel}: CreateProfileFormProps) 
                 profileType == "Teacher" ? <TeacherCreationForm ref={formRef} onSubmit={onSubmit} /> :
                 profileType == "Retirees" && <RetireeCreationForm ref={formRef} onSubmit={onSubmit} />
             }
-            <SimpleGrid mt={20} cols={2} spacing={10}>
+            <SimpleGrid mt={10} cols={2} spacing={10}>
                 <Button color="red" variant="light" onClick={() => onCancel()}>
                     <Icon path={mdiClose} />
                     Cancelar
