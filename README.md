@@ -1,54 +1,43 @@
-# React + TypeScript + Vite
+# Ticketmaster Form Filler
+This Chrome extension is designed to streamline the ticket purchasing process on Ticketmaster. By allowing users to predefine multiple profiles that mirror the site's ticket holder form fields, the extension will quickly fill out the necessary information during checkout. This helps the user to save  time and significantly increase their chances of securing high-demand tickets.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="public/images/form-filling.gif" />
 
-Currently, two official plugins are available:
+## Key Features
+🔃 **Multiple Profiles:** Create and manage multiple profiles with pre-filled data matching the ticket holder form requirements.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🎯 **Quick Selection:** Easily choose which profile to use to fill out the form on the ticket page.
 
-## Expanding the ESLint configuration
+⚡ **Faster Checkout:** Fills out the form fields in a split second, giving you an edge in time-sensitive ticket releases.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<div style="display: flex; width: 100%; justify-content: space-between">
+  <img src="public/images/screenshot1.png" alt="Screenshot Register Profile" width="350px" height="200px" />
+<img src="public/images/screenshot2.png" alt="Screenshot Register Profile" width="300px" />
+</div>
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+
+<br/>
+
+
+
+## Installation 
+#### Clone this repository
+```
+  git clone https://github.com/leoandretta/ticketmaster-form-filler.git ticketmaster-form-filler
+```
+#### Open the project directory
+```
+  cd ticketmaster-form-filler
+```
+#### Install Dependencies
+```
+  npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Load the Extension
+1. Run the build command `npm run build`
+2. Navigate to `chrome://extensions/` in your Chrome browser
+3. At the top right corner of the page, enable "Developer Mode"
+4. Click "Load Unpacked".
+5. Navigate to your project's "dist" folder and select that and hit OK.
